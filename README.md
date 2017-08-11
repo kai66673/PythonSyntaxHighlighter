@@ -1,7 +1,7 @@
-# PythonSyntaxHighlighter
+п»ї# PythonSyntaxHighlighter
 
-Highlighter для исходного кода на Python.
-Реализован средствами Python 3/PyQt5 на базе QSyntaxHighlighter.
+Highlighter РґР»СЏ РёСЃС…РѕРґРЅРѕРіРѕ РєРѕРґР° РЅР° Python.
+Р РµР°Р»РёР·РѕРІР°РЅ СЃСЂРµРґСЃС‚РІР°РјРё Python 3/PyQt5 РЅР° Р±Р°Р·Рµ QSyntaxHighlighter.
 
-Выглядит примерно так:
+Р’С‹РіР»СЏРґРёС‚ РїСЂРёРјРµСЂРЅРѕ С‚Р°Рє:
 ![Python source highlighting Demo](images/demo.png)

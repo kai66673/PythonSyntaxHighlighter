@@ -80,8 +80,6 @@ class PythonSyntaxHighlighter(QSyntaxHighlighter):
                     self.highlightDeclarationIdentifier(scanner, self.formats[-2])
                 elif keywordKind == PythonScanner.FormatToken.SpecialKeyword.Def:
                     self.highlightDeclarationIdentifier(scanner, self.formats[-1])
-                else:
-                    self.setFormat(tk.position, tk.length, self.formats[tk.format])
 
             if fmt != PythonScanner.FormatToken.Format.Whitespace:
                 hasOnlyWhitespace = False

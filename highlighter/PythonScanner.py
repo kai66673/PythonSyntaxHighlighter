@@ -310,7 +310,6 @@ class PythonScanner(object):
                                              self.markedPosition, self.position - self.markedPosition)
 
         if ch in PythonScanner.braces:
-            ch = self.peek()
             return PythonScanner.FormatToken(PythonScanner.FormatToken.Format.Braces,
                                              self.markedPosition, self.position - self.markedPosition)
 

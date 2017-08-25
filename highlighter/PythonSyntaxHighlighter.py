@@ -70,6 +70,8 @@ class PythonSyntaxHighlighter(QSyntaxHighlighter):
         tk = scanner.read()
         while not tk.isEndOfBlock():
             fmt = tk.format
+            self.setFormat(tk.position, tk.length, self.formats[fmt])
+
             if fmt == PythonScanner.FormatToken.Format.Keyword and hasOnlyWhitespace:
                 keywordKind = tk.keywordKind(text)
                 if keywordKind == PythonScanner.FormatToken.SpecialKeyword.ImportOrFrom:
@@ -80,10 +82,10 @@ class PythonSyntaxHighlighter(QSyntaxHighlighter):
                     self.highlightDeclarationIdentifier(scanner, self.formats[-1])
                 else:
                     self.setFormat(tk.position, tk.length, self.formats[tk.format])
-            else:
-                self.setFormat(tk.position, tk.length, self.formats[tk.format])
+
             if fmt != PythonScanner.FormatToken.Format.Whitespace:
                 hasOnlyWhitespace = False
+
             tk = scanner.read()
 
         return scanner.state

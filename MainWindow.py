@@ -15,3 +15,4 @@ class MainWindow(QMainWindow):
         self.editor.setFont(font)
         self.highlighter = PythonSyntaxHighlighter(self.editor.document())
         self.setCentralWidget(self.editor)
+        self.setWindowTitle("Python Syntax Highlighter")

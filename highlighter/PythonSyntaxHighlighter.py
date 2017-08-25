@@ -72,13 +72,14 @@ class PythonSyntaxHighlighter(QSyntaxHighlighter):
             fmt = tk.format
             if fmt == PythonScanner.FormatToken.Format.Keyword and hasOnlyWhitespace:
                 keywordKind = tk.keywordKind(text)
-                self.setFormat(tk.position, tk.length, self.formats[tk.format])
                 if keywordKind == PythonScanner.FormatToken.SpecialKeyword.ImportOrFrom:
                     self.highlightImport(scanner)
                 elif keywordKind == PythonScanner.FormatToken.SpecialKeyword.Class:
                     self.highlightDeclarationIdentifier(scanner, self.formats[-2])
                 elif keywordKind == PythonScanner.FormatToken.SpecialKeyword.Def:
                     self.highlightDeclarationIdentifier(scanner, self.formats[-1])
+                else:
+                    self.setFormat(tk.position, tk.length, self.formats[tk.format])
             else:
                 self.setFormat(tk.position, tk.length, self.formats[tk.format])
             if fmt != PythonScanner.FormatToken.Format.Whitespace:
